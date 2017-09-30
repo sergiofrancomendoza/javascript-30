@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aprender a </title>
+</head>
+<body>
+
+  <div class="site-wrap">
+
+    <h1>Las nuevas tecnologias moviles</h1>
+
+    <p>El teléfono móvil nació hace cuarenta años como un armatoste de casi un kilo de peso.
+       Pero con el paso del tiempo ha ido estilizándose y evolucionando hasta convertirse en
+        una lámina de cristal, silicio y aluminio, un verdadero ordenador de bolsillo que
+         además sirve para hablar.</p> <br>
+  
+   <center> <img src="http://mamadigital.mx/blog/wp-content/uploads/2017/03/smartphone-collection.jpg" class="align-center slide-in"></center>
+
+
+    <p>La era de los móviles inteligentes o smartphones 
+      en 2012 se vendió el que hacía el número mil millones
+      ha abierto un nuevo universo de aplicaciones y conectividad
+       que está cambiando desde la forma en que nos comunicamos hasta la economía.
+        De hecho, el número de líneas móviles equivale al 85 % de los habitantes 
+        de la Tierra y en los países desarrollados supera el 100 %, pues hay usuarios
+         que poseen varias de ellas. Así, en 2013, en España había más de 52 millones.
+    </p>
+    <p>
+        <img src="https://seeklogo.com/images/M/Motorola-logo-C3DDCBA822-seeklogo.com.png" class="align-right slide-in">
+      
+      El 3 de abril de 1973 Martin Cooper, ingeniero de Motorola, 
+        hizo la primera llamada con móvil, un ladrillo de 800 gramos 
+        y 30 minutos de batería. Con él llamó a su rival de Bell Labs Research.
+         Diez años después, el Motorola DynaTAC 8000x, resultado del trabajo pionero de Cooper, 
+         se convirtió en el primer móvil en ser comercializado: 
+         costaba 3.995 dólares y recargarlo llevaba 10 horas.
+</p>
+
+<img src="https://ugc.kn3.net/i/origin/http://gstylemag.com/wp-content/uploads/2014/08/snapdragon-smartphones-342014.png" class="align-right slide-in">
+
+    <p>Pero la auténtica revolución en este campo llegaría a finales del siglo XX
+       y principios del XXI. En 1999, se introdujo en el mercado el Bluetooth, 
+       el estándar de comunicación inalámbrica a corta distancia que dio paso 
+       a los manos libres cuyo nombre y símbolo aluden a Harald Blåtand –Bluetooth–,
+        rey escandinavo del siglo X. Ese mismo año, apareció el Benefon Esc!,
+         un móvil con GPS que inauguraría la era de la geolocalización para estos dispositivos.</p>
+
+         <img src="https://cnet4.cbsistatic.com/img/9l4e41ssLriqvsvhTC9g92QPDKo=/300x620/2017/04/12/4902f747-a77c-4993-b086-acdfcf54957e/apple-iphone-se-2017-28.jpg" class="align-left slide-in">
+
+    <p>Se vendió sobre todo en Europa. Igualmente, 
+      la probable extinción de las cámaras compactas comenzó muy poco después,
+       el día en que se anunció el Samsung SCH-V200, el primer móvil con cámara digital.
+
+        No obstante, en 2003, el Nokia 1100, que no la tenía, pero era barato y fácil de usar,
+         era el más popular del mundo. Se vendieron 250 millones de ellos hasta 2007,
+          año en el que Steve Jobs presentó el iPhone y lo cambió todo. Aquel teléfono
+           totalmente táctil y centrado en internet y las aplicaciones reinventó el 
+           concepto de móvil y puso al resto de la industria a imitarlo frenéticamente.
+
+           Una consecuencia más o menos directa fue el lanzamiento de Google Wallet en 2011,
+           un monedero virtual que acepta cualquier tarjeta de crédito y débito y funciona como estas. 
+           Hoy, mientra se amplía la cobertura 4G, la tecnología que permite realizar transferencias 
+           de datos diez veces más rápido, Samsung y Apple acaparan más del 50% del mercado de smartphones. 
+
+</p>
+
+
+  </div>
+
+  <script>
+    function debounce(func, wait = 20, immediate = true) {
+      var timeout;
+      return function() {
+        var context = this, args = arguments;
+        var later = function() {
+          timeout = null;
+          if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+      };
+    };
+
+    const sliderImages = document.querySelectorAll('.slide-in');
+
+    function checkSlide() {
+      sliderImages.forEach(sliderImage => {
+        // half way through the image
+        const slideInAt = (window.scrollY + window.innerHeight) - sliderImage.height / 2;
+        // bottom of the image
+        const imageBottom = sliderImage.offsetTop + sliderImage.height;
+        const isHalfShown = slideInAt > sliderImage.offsetTop;
+        const isNotScrolledPast = window.scrollY < imageBottom;
+        if (isHalfShown && isNotScrolledPast) {
+          sliderImage.classList.add('active');
+        } else {
+          sliderImage.classList.remove('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', debounce(checkSlide));
+
+  </script>
+
+  <style>
+    html {
+      box-sizing: border-box;
+      background:#19002E;
+      font-family:'helvetica neue';
+      font-size: 20px;
+      font-weight: 200;
+    }
+    body {
+      margin: 0;
+    }
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+
+    h1 {
+      margin-top: 0;
+    }
+
+    .site-wrap {
+      max-width: 700px;
+      margin: 100px auto;
+      background:#BCFDFD;
+      padding:40px;
+      text-align: justify;
+    }
+
+    .align-left {
+      float:left;
+      margin-right:20px;
+    }
+
+    .align-right {
+      float:right;
+      margin-left:20px;
+    }
+
+    .slide-in {
+      opacity:0;
+      transition:all .5s;
+    }
+
+    .align-left.slide-in {
+      transform:translateX(-30%) scale(0.95);
+    }
+    .align-right.slide-in {
+      transform:translateX(30%) scale(0.95);
+    }
+
+    .slide-in.active {
+      opacity:1;
+      transform:translateX(0%) scale(1);
+    }
+
+  </style>
+
+</body>
+</html>

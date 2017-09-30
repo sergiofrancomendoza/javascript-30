@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>seguidor de cursor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+      <ul class="menu">
+        <li><a href="">Home</a></li>
+        <li><a href="">Unity</a></li>
+        <li><a href="">WebGL</a></li>
+      </ul>
+    </nav>
+
+    <div class="wrapper">
+
+      <p><a href="">Unity</a> es un motor de videojuego multiplataforma creado por Unity Technologies.
+         <a href="">Unity </a>  está disponible como plataforma de desarrollo para Microsoft Windows, OS X, Linux.</p>
+      <p> La plataforma de desarrollo tiene<a href=""> soporte </a> tiene de compilación con diferentes tipos de 
+        <a href="">plataformas </a>(Véase la sección Plataformas objetivo).</p>
+      <p>A partir de su versión<a href=""> 5.4.0</a> ya no soporta el desarrollo de contenido para navegador a través de su plugin web, en su lugar se utiliza
+         <a href=""> WebGL.</a> Unity tiene dos versiones: Unity Professional (pro) y Unity Personal.</p>
+    </div>
+
+<script>
+  const triggers = document.querySelectorAll('a');
+  const highlight = document.createElement('span');
+  highlight.classList.add('highlight');
+  document.body.appendChild(highlight);
+
+  function highlightLink() {
+    const linkCoords = this.getBoundingClientRect();
+    console.log(linkCoords);
+    const coords = {
+      width: linkCoords.width,
+      height: linkCoords.height,
+      top: linkCoords.top + window.scrollY,
+      left: linkCoords.left + window.scrollX
+    };
+
+    highlight.style.width = `${coords.width}px`;
+    highlight.style.height = `${coords.height}px`;
+    highlight.style.transform = `translate(${coords.left}px, ${coords.top}px)`;
+
+  }
+
+  triggers.forEach(a => a.addEventListener('mouseenter', highlightLink));
+
+</script>
+</body>
+</html>
+

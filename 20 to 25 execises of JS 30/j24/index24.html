@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Reseña sobre videojuegos</h1>
+  </header>
+
+  <nav id="main">
+    <ul>
+      <li class="logo"><a href="#">Reseña</a></li>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Acerca de</a></li>
+      <li><a href="#">Imagenes</a></li>
+      <li><a href="#">Locatilizacion</a></li>
+      <li><a href="#">Mapas</a></li>
+    </ul>
+  </nav>
+
+  <div class="site-wrap">
+      <img src="http://kingfeatures.com/wp-content/uploads/photo-gallery/cuphead_640x360_3.png" class="align-left slide-in">
+    <p>
+        Tengo la sensación de que en los últimos tiempos se sobreestima 
+        todo lo que tiene que ver con la dificultad de un videojuego.
+         Hemos pasado tantos años en los que la industria ha derivado 
+         hacia una suavización tan fuerte del nivel de desafío que la 
+         intención era la de no dejar de lado a nadie, ni al más inexperto, 
+         y eso provocó algo tan exagerado en cuanto a sencillez que en la 
+         generación pasada hay abundantes ejemplos de cómo no hacer las cosas. 
+         Es por ello que en los últimos tiempos se está viviendo un empuje
+          fuerte de algunos estudios hacia el desafío, fundamentalmente 
+          alentados por el éxito de series como los Souls de From Software.
+    </p><center>
+    <img src="http://cdn.akamai.steamstatic.com/steam/apps/493840/header.jpg?t=1506529049" >
+    <p>
+        resentado en la PlayStation Experience del pasado año, Marvel VS. Capcom Infinite fue recibido con optimismo por parte de la comunidad, pero no tuvo una buena primera impresión cuando se mostró ante el gran público. Capcom, además, no lo ha hecho del todo bien en la comunicación, no sabiendo apagar los incendios que se generaban a su alrededor con la certeza que se espera de una empresa con tantos éxitos y marcas legendarias en su poder. ¿Qué queda tras el atrevido apartado técnico y las polémicas decisiones empresariales? Un título que ha sabido explorar en las virtudes de una extensísima franquicia para reinventarse y aportar interesantes nuevas mecánicas a una marca que parecía que lo había hecho todo ya.
+    </p>
+  </center>
+    <img src="https://assets.pokemon.com/assets/cms2-es-es/img/video-games/video-games/pokken_tournament_dx/pokken-tournament-dx-169.jpg" class="align-right slide-in">
+    <p>sobre el anterior videojuego (Wii U, 2016) dijimos que poseía un gran e innovador estilo combativo. La existencia de dos fases en las contiendas -abierta y de duelo- daba lugar a una jugabilidad muy novedosa, pero también estratégica dentro del siempre competitivo género de la lucha. Se notaba la mano de Bandai Namco, desarrollador principal de un título cuyo estreno fue inicialmente para máquinas arcade.
+    </p>
+    <p>
+        El videojuego era profundo, y contaba con una calidad fuera de toda duda, gracias a un apartado visual muy llamativo. Sin embargo, también tenía muchos aspectos a mejorar. Uno de los que más criticamos fue la escasez de luchadores. También echamos en falta mayor variedad en los modos de juego. Lo que viene a hacer Pokkén Tournament DX es atacar directamente esas debilidades, al tiempo que se convierte en otro exponente importante dentro del creciente catálogo de Nintendo Switch.
+    </p>
+      </div>
+
+  <script>
+    // Not a ton of code, but hard to
+    const nav = document.querySelector('#main');
+    let topOfNav = nav.offsetTop;
+
+    function fixNav() {
+      if(window.scrollY >= topOfNav) {
+        document.body.style.paddingTop = nav.offsetHeight + 'px';
+        document.body.classList.add('fixed-nav');
+      } else {
+        document.body.classList.remove('fixed-nav');
+        document.body.style.paddingTop = 0;
+      }
+    }
+
+    window.addEventListener('scroll', fixNav);
+
+  </script>
+
+
+</body>
+</html>

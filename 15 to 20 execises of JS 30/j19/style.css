@@ -1,0 +1,60 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+
+}
+
+html {
+  font-size: 8px;
+  background:#00B7FF;
+}
+
+.photobooth {
+  background:#000000;
+  max-width:80rem;
+  margin: 1rem auto;
+  border-radius:1px;
+}
+
+/*clearfix*/
+.photobooth:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+/*venta de dentro para tomar foto*/
+.photo {
+  width:80%;
+  float:left;
+}
+/*previsualizacion*/
+.player {
+  position: absolute;
+  top:20px;
+  right: 20px;
+  width:300px;
+}
+/*
+  Strip!
+*/
+
+.strip {
+  padding:1rem;
+} 
+/*fotos ya tomadas*/
+.strip img {
+  width:120px;
+  overflow-x: scroll;
+  padding:1.8rem 0.8rem 2.5rem 0.8rem;
+  box-shadow:0 0 3px rgba(0,0,0,0.2);
+  background:#7A7979;
+}
+
+.strip a:nth-child(5n+1) img { transform: rotate(10deg); }
+.strip a:nth-child(5n+2) img { transform: rotate(-2deg); }
+.strip a:nth-child(5n+3) img { transform: rotate(8deg); }
+.strip a:nth-child(5n+4) img { transform: rotate(-11deg); }
+.strip a:nth-child(5n+5) img { transform: rotate(12deg); }
